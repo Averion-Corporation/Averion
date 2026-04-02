@@ -34,7 +34,7 @@ export function Footer() {
             <p className="text-xs font-semibold uppercase text-zinc-500">Company</p>
             <div className="flex flex-col gap-2">
               <a href="#" className="transition-colors hover:text-white">Case Studies</a>
-              <a href="https://github.com/averion" className="transition-colors hover:text-white">GitHub</a>
+              <a href="https://github.com/Averion-Corporation" className="transition-colors hover:text-white">GitHub</a>
               <a href="/press-kit" className="transition-colors hover:text-white">Press Kit</a>
             </div>
           </div>
@@ -43,7 +43,7 @@ export function Footer() {
             <div className="flex flex-col gap-2">
               <a href="#" className="transition-colors hover:text-white">Privacy Policy</a>
               <a href="#" className="transition-colors hover:text-white">Terms of Service</a>
-              <a href="#" className="transition-colors hover:text-white">License</a>
+              <a href="https://github.com/Averion-Corporation/Averion" className="transition-colors hover:text-white">License</a>
             </div>
           </div>
         </div>
