@@ -1,34 +1,19 @@
 ﻿import { Container } from './Container';
 import { FadeInUp } from './FadeIn';
 import { SectionPill } from './SectionPill';
-
-const steps = [
-  {
-    title: 'Discover',
-    description: 'Define outcomes, users, and the technical opportunity.',
-  },
-  {
-    title: 'Design',
-    description: 'Create premium UX, flows, and a scalable design system.',
-  },
-  {
-    title: 'Build',
-    description: 'Deliver full-stack development with quality guardrails.',
-  },
-  {
-    title: 'Launch',
-    description: 'Release, measure, and optimize based on real data.',
-  },
-];
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function Process() {
+  const { t } = useLanguage();
+  const steps = t.process.steps;
+
   return (
     <section id="process" className="py-24">
       <Container>
         <FadeInUp className="mx-auto max-w-2xl text-center">
-          <SectionPill className="mx-auto">Process</SectionPill>
+          <SectionPill className="mx-auto">{t.process.pill}</SectionPill>
           <h2 className="mt-5 text-3xl font-semibold text-white sm:text-4xl">
-            How we deliver with your team
+            {t.process.title}
           </h2>
         </FadeInUp>
         <div className="mt-12 grid gap-6 md:grid-cols-2">

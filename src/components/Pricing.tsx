@@ -1,39 +1,7 @@
 ﻿import { Container } from './Container';
 import { FadeInUp } from './FadeIn';
 import { SectionPill } from './SectionPill';
-
-const tiers = [
-  {
-    name: 'Foundation',
-    price: 'From $2k',
-    description: 'Discovery sprint + product blueprint for alignment.',
-    features: [
-      'Product strategy session',
-      'Experience mapping',
-      'Technical scope & roadmap',
-    ],
-  },
-  {
-    name: 'Scale',
-    price: 'From $5k',
-    description: 'Full product delivery with design, build, and launch.',
-    features: [
-      'Design system + UI',
-      'Full-stack implementation',
-      'Weekly stakeholder demos',
-    ],
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    description: 'Platform modernization for complex organizations.',
-    features: [
-      'Multi-team enablement',
-      'Security & compliance',
-      'Long-term partnership',
-    ],
-  },
-];
+import { useLanguage } from '../i18n/LanguageContext';
 
 const glowColors = [
   'rgba(99, 102, 241, 0.35)',
@@ -42,13 +10,16 @@ const glowColors = [
 ];
 
 export function Pricing() {
+  const { t } = useLanguage();
+  const tiers = t.pricing.tiers;
+
   return (
     <section id="pricing" className="py-24">
       <Container>
         <FadeInUp className="mx-auto max-w-2xl text-center">
-          <SectionPill className="mx-auto">Engagements</SectionPill>
+          <SectionPill className="mx-auto">{t.pricing.pill}</SectionPill>
           <h2 className="mt-5 text-3xl font-semibold text-white sm:text-4xl whitespace-nowrap">
-            Flexible engagements for ambitious teams
+            {t.pricing.title}
           </h2>
         </FadeInUp>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -86,7 +57,7 @@ export function Pricing() {
                     href="#contact"
                     className="mt-6 inline-flex w-full items-center justify-center rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/40"
                   >
-                    Start engagement
+                    {t.pricing.cta}
                   </a>
                 </div>
               </div>

@@ -3,8 +3,11 @@ import { Container } from './Container';
 import { FadeInUp } from './FadeIn';
 import heroLogo from '../assets/averion-corp.png';
 import averionWordmark from '../assets/AVERION-white.png';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="top"
@@ -57,14 +60,12 @@ export function Hero() {
               className="inline-block h-7 w-auto align-baseline sm:h-9 lg:h-10"
             />{' '}
             <span className="bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-              builds digital products
+              {t.hero.headlineAccent}
             </span>{' '}
-            that perform
+            {t.hero.headlineTail}
           </motion.h2>
           <p className="mt-6 max-w-2xl text-base text-zinc-300 sm:text-lg">
-            Averion Corporation is a product and engineering studio creating
-            premium websites, applications, and platforms for ambitious teams.
-            We align strategy, design, and delivery to build outcomes that last.
+            {t.hero.description}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <motion.a
@@ -73,7 +74,7 @@ export function Hero() {
               href="#contact"
               className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-zinc-900 shadow-glow transition"
             >
-              Start a Project
+              {t.hero.primaryCta}
             </motion.a>
             <motion.a
               whileHover={{ y: -2 }}
@@ -81,7 +82,7 @@ export function Hero() {
               href="#features"
               className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-3 text-sm font-semibold text-zinc-200 transition hover:border-white/40 hover:text-white"
             >
-              See Capabilities
+              {t.hero.secondaryCta}
             </motion.a>
           </div>
         </FadeInUp>

@@ -3,48 +3,26 @@ import { Shield, Sparkles, Cpu, Layers, Cloud, Activity } from 'lucide-react';
 import { Container } from './Container';
 import { FadeInUp } from './FadeIn';
 import { SectionPill } from './SectionPill';
-
-const features = [
-  {
-    title: 'Strategic Discovery',
-    description: 'Roadmap alignment, product goals, and technical feasibility mapping.',
-    icon: Sparkles,
-  },
-  {
-    title: 'Premium UI Systems',
-    description: 'Design systems, component libraries, and brand-consistent UX.',
-    icon: Layers,
-  },
-  {
-    title: 'Full-Stack Delivery',
-    description: 'Web apps, APIs, and scalable infrastructure built to grow.',
-    icon: Cpu,
-  },
-  {
-    title: 'Secure by Default',
-    description: 'Security, compliance, and privacy built into every layer.',
-    icon: Shield,
-  },
-  {
-    title: 'Cloud & DevOps',
-    description: 'CI/CD, monitoring, and reliable deployments with observability.',
-    icon: Cloud,
-  },
-  {
-    title: 'Data & Insights',
-    description: 'Analytics and dashboards that connect delivery to outcomes.',
-    icon: Activity,
-  },
-];
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function Features() {
+  const { t } = useLanguage();
+  const features = [
+    { ...t.features.items[0], icon: Sparkles },
+    { ...t.features.items[1], icon: Layers },
+    { ...t.features.items[2], icon: Cpu },
+    { ...t.features.items[3], icon: Shield },
+    { ...t.features.items[4], icon: Cloud },
+    { ...t.features.items[5], icon: Activity },
+  ];
+
   return (
     <section id="features" className="py-24">
       <Container>
         <FadeInUp className="mx-auto max-w-2xl text-center">
-          <SectionPill className="mx-auto">Capabilities</SectionPill>
+          <SectionPill className="mx-auto">{t.features.pill}</SectionPill>
           <h2 className="mt-5 text-3xl font-semibold text-white sm:text-4xl">
-            Built for ambitious digital products
+            {t.features.title}
           </h2>
         </FadeInUp>
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">

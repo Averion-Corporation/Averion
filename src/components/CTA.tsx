@@ -2,8 +2,11 @@
 import { Container } from './Container';
 import { FadeInUp } from './FadeIn';
 import { SectionPill } from './SectionPill';
+import { useLanguage } from '../i18n/LanguageContext';
 
 export function CTA() {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="py-24">
       <Container>
@@ -14,13 +17,12 @@ export function CTA() {
             </div>
             <div className="pointer-events-none absolute inset-x-0 top-6 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent" />
             <div className="relative text-center">
-              <SectionPill className="mx-auto">Start now</SectionPill>
+              <SectionPill className="mx-auto">{t.cta.pill}</SectionPill>
               <h2 className="mt-5 text-3xl font-semibold text-white sm:text-4xl">
-                Ready to build your next product?
+                {t.cta.title}
               </h2>
               <p className="mt-4 mx-auto max-w-2xl text-sm text-zinc-300">
-                Tell us about your roadmap. We will craft the strategy, design, and
-                engineering to take you there.
+                {t.cta.description}
               </p>
               <motion.a
                 whileHover={{ y: -2 }}
@@ -28,7 +30,7 @@ export function CTA() {
                 href="mailto:hello@averion.com"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-900"
               >
-                Start a Project
+                {t.cta.button}
               </motion.a>
             </div>
           </div>
